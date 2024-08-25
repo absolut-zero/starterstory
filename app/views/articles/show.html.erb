@@ -1,0 +1,11 @@
+<h1><%= @article.title %></h1>
+
+<h2>Introduction</h2>
+<p><%= @article.introduction %></p>
+
+<% @article.article_sections.each do |section| %>
+  <h2><%= section.business_idea.title %></h2>
+  <%= simple_format(section.content) %>
+<% end %>
+
+<%= link_to 'Back to Articles', root_path %>
